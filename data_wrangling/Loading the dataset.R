@@ -25,6 +25,8 @@ for (i in 1:30) {
   }
 }
 
+
+
 daily_data  = daily_data %>%
   rename_with(~ c("location", "latitude", "longitude","altitude", 
                   "precision", "location_desc","minutes", "name", "number", 
@@ -33,6 +35,16 @@ daily_data  = daily_data %>%
                   "q1b", "q2b", paste0("q2.", 1:9, "b"),  
                   paste0("q", 3:11, "b"),  paste0("q12.", 1:3, "b")
                   ), 12:66)
+
+library(readr)
+deid_list <- read_csv("~/Downloads/deidentify - Sheet1.csv")
+
+daily_data$number = as.numeric(daily_data$number)
+deid_list$Number = as.numeric(deid_list$Number)
+
+daily_data = daily_data %>%
+  left_join(deid_list, by = c("number" = "Number"), relationship = "many-to-many") %>%
+  select(-name, -number, -Name)
 
 daily_data$form = as.factor(ifelse(is.na(daily_data[[a]]), 
                                    "b","a"))
@@ -61,3 +73,10 @@ for (i in seq(from =12.1, to =12.3, by=0.1)){
 
 daily_data = daily_data %>%
   select(-(44:66), -77)
+
+
+
+
+
+
+
