@@ -51,4 +51,4 @@ daily_data_1 =  daily_data_1 %>%
 daily_data_fin =  daily_data_1 %>%
   select(- c(3:11, 18, 42:50 ))
 
-
+write_csv(daily_data_fin, "~/tropical-monsoon-gema/data_wrangling/daily_data.csv")
