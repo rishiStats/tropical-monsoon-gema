@@ -42,41 +42,8 @@ deid_list <- read_csv("~/Downloads/deidentify - Sheet1.csv")
 daily_data$number = as.numeric(daily_data$number)
 deid_list$Number = as.numeric(deid_list$Number)
 
-daily_data = daily_data %>%
+daily_data_1 = daily_data %>%
   left_join(deid_list, by = c("number" = "Number"), relationship = "many-to-many") %>%
   select(-name, -number, -Name)
 
-daily_data$form = as.factor(ifelse(is.na(daily_data[[a]]), 
-                                   "b","a"))
-for (i in 1:11){
-  a = paste0("q",i)
-  b = paste0("q",i, "b")
-  daily_data[[a]] = as.factor(ifelse(is.na(daily_data[[a]]), 
-                                          daily_data[[b]], 
-                                          daily_data[[a]]))
-}
-for (i in seq(from =2.1, to =2.9, by=0.1)){
-  a = paste0("q",i)
-  b = paste0("q",i, "b")
-  daily_data[[a]] = as.factor(ifelse(is.na(daily_data[[a]]), 
-                                     daily_data[[b]], 
-                                     daily_data[[a]]))
-}
-
-for (i in seq(from =12.1, to =12.3, by=0.1)){
-  a = paste0("q",i)
-  b = paste0("q",i, "b")
-  daily_data[[a]] = as.factor(ifelse(is.na(daily_data[[a]]), 
-                                     daily_data[[b]], 
-                                     daily_data[[a]]))
-}
-
-daily_data = daily_data %>%
-  select(-(44:66), -77)
-
-
-
-
-
-
-
+write_csv(daily_data_1, "~/tropical-monsoon-gema/data_wrangling/daily_data.csv")
