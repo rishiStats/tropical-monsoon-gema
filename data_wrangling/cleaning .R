@@ -1,6 +1,8 @@
 library(dplyr)
 library(lubridate)
 
+
+daily_data_1 = daily_data
 daily_data_1$form = as.factor(ifelse(is.na(daily_data_1[[a]]), 
                                    "b","a"))
 for (i in 1:11){
@@ -48,7 +50,16 @@ daily_data_1 =  daily_data_1 %>%
          positive_event = ifelse(q12.3 < 0, "yes", "no"), 
          negative_event = ifelse(q12.3 > 0, "yes", "no"))
 
-daily_data_fin =  daily_data_1 %>%
+daily_data_1 =  daily_data_1 %>%
   select(- c(3:11, 18, 42:50 ))
 
-write_csv(daily_data_fin, "~/tropical-monsoon-gema/data_wrangling/daily_data.csv")
+
+daily_data_1 <- daily_data_1 %>%
+  mutate(date_entry = as_date(end),
+    time_entry = format(end, format = "%H:%M:%S")) %>%
+  filter(time_entry >= "19:20:00" | time_entry <= "04:00:00" )%>%
+  select(-c(1:2))
+
+
+
+write_csv(daily_data_1, "~/tropical-monsoon-gema/data_wrangling/daily_data.csv")

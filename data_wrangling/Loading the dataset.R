@@ -42,8 +42,8 @@ deid_list <- read_csv("~/Downloads/deidentify - Sheet1.csv")
 daily_data$number = as.numeric(daily_data$number)
 deid_list$Number = as.numeric(deid_list$Number)
 
-daily_data_1 = daily_data %>%
+daily_data = daily_data %>%
   left_join(deid_list, by = c("number" = "Number"), relationship = "many-to-many") %>%
   select(-name, -number, -Name)
 
-write_csv(daily_data_1, "~/tropical-monsoon-gema/data_wrangling/daily_data.csv")
+write_csv(daily_data, "~/tropical-monsoon-gema/data_wrangling/daily_data.csv")
