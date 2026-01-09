@@ -2,7 +2,6 @@
 #loading necessary packages 
 library(dplyr)
 library(lubridate)
-library(readr)
 
 # add form column - indicates which of 2 forms have been used
 daily_data_1 = daily_data
