@@ -60,13 +60,25 @@ daily_data_1 =  daily_data_1 %>%
 daily_data_1 =  daily_data_1 %>%
   select(- c(3:11, 18, 42:50 ))
 
-#excluding variables outside 7:20 pm to 4:00 am time period 
-daily_data_1 <- daily_data_1 %>%
-  mutate(date_entry = as_date(end),
-    time_entry = format(end, format = "%H:%M:%S")) %>%
-  filter(time_entry >= "19:20:00" | time_entry <= "04:00:00" )%>%
-  select(-c(1:2))
 
+daily_data_1 <- daily_data_1 %>%
+  #extracting date of response
+  mutate(date_entry = as_date(end),
+         #extracting time of time of response
+    time_entry = format(end, format = "%H:%M:%S"), 
+    #extracting time taken to finish the form 
+    time_taken = format(end - start)) %>%
+  #excluding variables outside 7:20 pm to 4:00 am time period 
+  filter(time_entry >= "19:20:00" | time_entry <= "04:00:00" )
+
+#removing participants with less than 15 (50%) observations 
+daily_data_1 %>%
+  group_by(ID) %>%
+  mutate(total = n()) %>%
+  filter( total >= 15) %>%
+  ungroup()
 
 #saving the final output 
 write_csv(daily_data_1, "~/tropical-monsoon-gema/data_wrangling/daily_data.csv")
+
+
