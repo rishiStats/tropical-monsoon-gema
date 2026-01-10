@@ -2,6 +2,7 @@
 #loading necessary packages 
 library(dplyr)
 library(lubridate)
+library(readr)
 
 # add form column - indicates which of 2 forms have been used
 daily_data_1 = daily_data
@@ -67,9 +68,13 @@ daily_data_1 <- daily_data_1 %>%
          #extracting time of time of response
     time_entry = format(end, format = "%H:%M:%S"), 
     #extracting time taken to finish the form 
-    time_taken = format(end - start)) %>%
+    time_taken = format(end - start), 
+    date = as.Date("2025-11-29") + (Day - 1) ) %>%
   #excluding variables outside 7:20 pm to 4:00 am time period 
-  filter(time_entry >= "19:20:00" | time_entry <= "04:00:00" )
+  filter(time_entry >= "19:20:00" | time_entry <= "04:00:00" ) %>% 
+  #removing start and end column 
+  select( - c(start, end))
+
 
 #removing participants with less than 15 (50%) observations 
 daily_data_1 %>%

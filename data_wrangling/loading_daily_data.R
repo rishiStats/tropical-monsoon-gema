@@ -17,11 +17,11 @@ for (i in 1:30) {
   if (i == 1) {
     daily_data =  read_excel(file_path, sheet = day, col_names = TRUE)[, 1:77]
     daily_data = daily_data %>%
-      mutate(Day = day)
+      mutate(Day = i)
   } else{
     new_day = read_excel(file_path, sheet = day, col_names = TRUE)[, 1:77]
     new_day = new_day %>%
-      mutate(Day = day)
+      mutate(Day = i)
     daily_data = rbind(daily_data, new_day)
   }
 }
