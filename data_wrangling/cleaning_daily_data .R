@@ -54,15 +54,15 @@ daily_data_1 =  daily_data_1 %>%
          psychopath_std = round(psychopath/5), 
          well_being_std = round(well_being/4), 
          overall_std = round(overall/9),
-         positive_event = ifelse(q12.3 < 0, "yes", "no"), 
-         negative_event = ifelse(q12.3 > 0, "yes", "no"))
+         positive_event = ifelse(q12.3 > 0, 1, NA), 
+         negative_event = ifelse(q12.3 < 0, 1, NA))
 
 #dropping form b responses as well as irrelevant columns 
 daily_data_1 =  daily_data_1 %>%
   select(- c(3:11, 18, 42:50 ))
 
 
-daily_data_1 <- daily_data_1 %>%
+daily_data_1 = daily_data_1 %>%
   #extracting date of response
   mutate(date_entry = as_date(end),
          #extracting time of time of response
@@ -77,7 +77,7 @@ daily_data_1 <- daily_data_1 %>%
 
 
 #removing participants with less than 15 (50%) observations 
-daily_data_1 %>%
+daily_data_1 = daily_data_1 %>%
   group_by(ID) %>%
   mutate(total = n()) %>%
   filter( total >= 15) %>%
