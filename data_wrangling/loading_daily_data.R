@@ -7,11 +7,11 @@ library(readr)
 #looping through spreadsheets to combine all datasets across the days 
 for (i in 1:30) {
   if (i <= 10) {
-    file_path = "/Users/rishik/Desktop/Day 1-10.xlsx"
+    file_path = "/Users/rishik/Desktop/GEMA/Data/Day 1-10.xlsx"
   } else if (i <= 20) {
-    file_path = "/Users/rishik/Desktop/Day 11-20.xlsx"
+    file_path = "/Users/rishik/Desktop/GEMA/Data/Day 11-20.xlsx"
   } else {
-    file_path = "/Users/rishik/Desktop/Day 21 -30.xlsx"
+    file_path = "/Users/rishik/Desktop/GEMA/Data/Day 21 -30.xlsx"
   }
   day = paste0("Day ", i)
   if (i == 1) {
@@ -37,7 +37,7 @@ daily_data  = daily_data %>%
                   ), 12:66)
 
 #reading file containing participants ID for deidentification 
-deid_list <- read_csv("~/Downloads/deidentify - Sheet1.csv")
+deid_list <- read_csv('/Users/rishik/Desktop/GEMA/Data/deidentify - Sheet1.csv')
 
 #ensuring common ID if numeric (phone number is used as common ID)
 daily_data$number = as.numeric(daily_data$number)
