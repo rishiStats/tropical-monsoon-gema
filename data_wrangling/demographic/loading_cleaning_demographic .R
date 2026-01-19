@@ -1,6 +1,7 @@
 library(readr)
 library(dplyr)
 library(stringr)
+library(lubridate)
 
 demographic = read_csv("~/Desktop/GEMA/Data/Socio-Demographic Details (Responses) - Form responses 1.csv")
 deidentify = read_csv("~/Desktop/GEMA/Data/deidentify - Sheet1.csv")
@@ -57,13 +58,73 @@ demographic <- demographic %>%
       str_detect(temp_col, "computer|\\bcs\\b|data science") ~ "Computer Science",
       str_detect(temp_col, "statistics|biostatistics|bcom|b com") ~ "Statistics",
       str_detect(temp_col, "public health|mph|research") ~ "Public Health",
-      str_detect(temp_col, "baslp|aslp|audiology") ~ "Rehabilitation", # Grouped as requested earlier
-      str_detect(temp_col, "allied health|health science|science") ~ "Allied Health Science",
+      str_detect(temp_col, "baslp|aslp|audiology|allied health|health science|science") ~ "Allied Health",
       str_detect(temp_col, "counselling|councelling|counseling") ~ "Counselling Psychology",
       str_detect(temp_col, "psychology|pychology|\\bbsc\\b") ~ "Psychology",
       TRUE ~ str_to_title(field_edu)
     )
   ) %>%
   select(-temp_col)
+
+demographic <- demographic %>%
+  mutate(
+    age = floor(interval(as.Date(dob, format = "%d/%m/%Y"), as.Date("2025-11-29")) / years(1)),
+    age = case_when(
+      age == 0  ~ as.numeric(names(which.max(table(age[age > 0])))), 
+      age == 17 ~ 18,
+      TRUE      ~ age
+    )
+  )
+    
+demographic <- demographic %>%
+  mutate ( orientation = case_when(orientation == "..." ~ names(which.max(table(orientation))),
+                                   TRUE ~ orientation))
+
+library(dplyr)
+
+demographic <- demographic %>%
+  mutate(
+    hoh_edu = case_when(
+      grepl("Profession or honours", hoh_edu) ~ 7,
+      grepl("Graduate", hoh_edu) ~ 6,
+      grepl("Intermediate", hoh_edu) ~ 5,
+      grepl("High school", hoh_edu) ~ 4,
+      grepl("Middle school", hoh_edu) ~ 3,
+      grepl("Primary school", hoh_edu) ~ 2,
+    ),
+
+    hoh_occu = case_when(
+      grepl("Legislators", hoh_occu) ~ 10, 
+      grepl("Professionals", hoh_occu)  ~ 9,
+      grepl("Technicians", hoh_occu) ~ 8,
+      grepl("Clerks", hoh_occu)  ~ 7,
+      grepl("Skilled workers", hoh_occu) ~ 6,
+      grepl("Skilled agricultural", hoh_occu)  ~ 5,
+      grepl("Craft", hoh_occu)  ~ 4,
+      grepl("Plant and machine", hoh_occu) ~ 3,
+      grepl("Elementary", hoh_occu)~ 2,
+      grepl("Unemployed|Retired", hoh_occu)   ~ 1, 
+    ),
+
+    fam_income = case_when(
+      grepl("More than 2 lakhs", fam_income)        ~ 12,
+      grepl("1 lakh to 2 lakhs", fam_income)       ~ 10,
+      grepl("80 thousand to 1 lakh", fam_income)   ~ 6,
+      grepl("50 thousand to 80 thousand", fam_income) ~ 4,
+      grepl("30 thousand to 50 thousand", fam_income) ~ 3,
+      grepl("10 thousand to 30 thousand", fam_income) ~ 2,
+      grepl("Less than 10 thousand", fam_income)      ~ 1,
+      TRUE ~ 1
+    ),
+    ses_total = hoh_edu + hoh_occu + fam_income,
+    ses_class = case_when(
+      ses_total >= 26 ~ "Upper (I)",
+      ses_total >= 16 ~ "Upper Middle (II)",
+      ses_total >= 11 ~ "Lower Middle (III)",
+      ses_total >= 5  ~ "Upper Lower (IV)",
+      TRUE            ~ "Lower (V)"
+    )
+  )
+
 
 write_csv(demographic, "~/tropical-monsoon-gema/data_wrangling/demographic/demographic_cleaned.csv")
