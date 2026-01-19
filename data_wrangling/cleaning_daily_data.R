@@ -38,7 +38,8 @@ for (i in seq(from =12.1, to =12.3, by=0.1)){
 #removing columns not relevant for analysis 
 daily_data_1 = daily_data_1 %>%
   mutate(district_id = id_1, district=name) %>%
-  select(-(1:3), -(6:14),-(21), -(45:78), -(82:83), -(86:96)) 
+  select(-(1:3), -(6:14),-(21), -(45:78), -(82:83), -(86:96)) %>%
+  filter(!is.na(district_id))
   
 
 # removing duplicate observations (~ only one per day-person, if more than one exist, the earliest value is taken )
