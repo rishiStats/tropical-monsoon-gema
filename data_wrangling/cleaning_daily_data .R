@@ -3,11 +3,14 @@
 library(dplyr)
 library(lubridate)
 library(readr)
+library(stringr)
 
 # add form column - indicates which of 2 forms have been used
-daily_data_1 = daily_data
-daily_data_1$form = as.factor(ifelse(is.na(daily_data_1[[a]]), 
+daily_data_1 = read_csv("data_wrangling/georef_daily_dataa.csv")
+daily_data_1$form = as.factor(ifelse(is.na(daily_data_1$q1), 
                                    "b","a"))
+daily_data_1 <- daily_data_1 %>%
+  rename_with(~ str_replace_all(., "_", "."), contains("q"))
 
 #looping over both versions of questions to ensure unified appearance
 for (i in 1:11){
@@ -34,7 +37,9 @@ for (i in seq(from =12.1, to =12.3, by=0.1)){
 
 #removing columns not relevant for analysis 
 daily_data_1 = daily_data_1 %>%
-  select(-(42:66), -77)
+  mutate(district_id = id_1, district=name) %>%
+  select(-(1:3), -(6:14),-(21), -(45:78), -(82:83), -(86:96)) 
+  
 
 # removing duplicate observations (~ only one per day-person, if more than one exist, the earliest value is taken )
 daily_data_1 = daily_data_1 %>%
@@ -44,7 +49,7 @@ daily_data_1 = daily_data_1 %>%
 
 #converting all numerical variables to numeric format
 daily_data_1 = daily_data_1 %>%
-  mutate(across(c(19, 30:39, 41), as.numeric))
+  mutate(across(c(9, 20:29, 31), as.numeric))
 
 #creating total scores, standardized total scores and negative and positive events variables 
 daily_data_1 =  daily_data_1 %>%
@@ -54,12 +59,10 @@ daily_data_1 =  daily_data_1 %>%
          psychopath_std = round(psychopath/5), 
          well_being_std = round(well_being/4), 
          overall_std = round(overall/9),
+         q1 = q1-5,
+         q12.3 = q12.3 - 5,
          positive_event = ifelse(q12.3 > 0, 1, NA), 
          negative_event = ifelse(q12.3 < 0, 1, NA))
-
-#dropping form b responses as well as irrelevant columns 
-daily_data_1 =  daily_data_1 %>%
-  select(- c(3:11, 18, 42:50 ))
 
 
 daily_data_1 = daily_data_1 %>%
@@ -84,4 +87,4 @@ daily_data_1 = daily_data_1 %>%
   ungroup()
 
 #saving the final output 
-write_csv(daily_data_1, "~/tropical-monsoon-gema/data_wrangling/daily_data.csv")
+write_csv(daily_data_1, "~/tropical-monsoon-gema/data_wrangling/daily_data_cleaned.csv")
