@@ -49,4 +49,4 @@ daily_data = daily_data %>%
   select(-name, -number, -Name)
 
 #saving the deidentified file in the same directory 
-write_csv(daily_data, "~/tropical-monsoon-gema/data_wrangling/daily_data.csv")
+write_csv(daily_data, "~/tropical-monsoon-gema/data_wrangling/panel_data/daily_data.csv")

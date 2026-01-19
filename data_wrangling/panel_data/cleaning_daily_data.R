@@ -88,4 +88,4 @@ daily_data_1 = daily_data_1 %>%
   ungroup()
 
 #saving the final output 
-write_csv(daily_data_1, "~/tropical-monsoon-gema/data_wrangling/daily_data_cleaned.csv")
+write_csv(daily_data_1, "~/tropical-monsoon-gema/data_wrangling/panel_data/daily_data_cleaned.csv")
