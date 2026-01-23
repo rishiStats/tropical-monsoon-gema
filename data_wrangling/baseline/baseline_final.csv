@@ -1,0 +1,119 @@
+ID,depression,anxiety,stress,problem_cope,emotion_cope,avoidant_cope,swls,social,loneliness,sleep_dur,sleep_dist_fin,sleep_lat_fin,day_dysf,sleep_qual,sleep_meds,sleep_total,extravert,agreeable,conscience,neurotic,openness,depress_cat,anxiety_cat,stress_cat,swls_cat,psqi
+ACA01,3,1,9,23,35,15,17,26,62,0,1,0,0,0,0,1,-5,-4,-1,-2,-1,normal,normal,normal,slightly dissatisfied,good
+ACA02,7,2,2,14,15,10,18,16,76,0,2,0,0,1,0,3,4,3,5,6,4,normal,normal,normal,slightly dissatisfied,good
+ACA03,1,0,0,23,20,9,10,18,27,0,1,0,0,1,0,2,2,2,2,2,0,normal,normal,normal,dissatisfied,good
+ACA04,3,2,6,19,22,14,26,23,53,0,2,0,1,1,1,6,0,1,3,3,3,normal,normal,normal,satisfied,bad
+ACA05,5,4,6,21,21,12,23,19,77,0,1,0,0,0,0,1,2,1,2,3,-2,normal,normal,normal,slightly satisfied,good
+ACA06,3,2,1,23,27,15,24,29,52,1,1,0,0,1,0,3,-3,-2,0,2,-2,normal,normal,normal,slightly satisfied,good
+ACA07,5,0,3,29,33,16,20,12,63,1,1,0,1,1,0,5,-3,-4,1,2,-2,normal,normal,normal,neutral,good
+ACA08,2,4,10,10,12,11,5,37,25,2,0,0,0,2,0,5,-5,-4,-2,0,0,normal,normal,normal,extremely dissatisfied,good
+ACA09,8,4,5,16,30,12,20,21,64,0,1,0,1,1,0,3,-1,-1,-2,0,1,normal,mild,normal,neutral,good
+ACA10,7,5,8,15,28,12,11,22,49,0,2,0,1,2,3,8,1,-2,3,-2,1,normal,normal,normal,dissatisfied,bad
+ACA11,19,18,18,22,34,24,26,21,39,0,2,0,0,0,0,3,-6,-7,-8,-6,-8,moderate,severe,moderate,satisfied,good
+ACA12,9,11,8,23,28,17,14,8,43,0,1,0,1,0,1,3,5,5,2,-1,0,normal,mild,normal,dissatisfied,good
+ACA13,7,6,7,12,12,11,14,37,71,0,1,0,0,1,0,2,-3,3,-3,-3,-1,normal,normal,normal,dissatisfied,good
+MCC01,10,8,9,17,27,15,24,40,47,1,3,0,2,2,1,11,2,0,-1,-2,-2,mild,moderate,normal,slightly satisfied,bad
+MCC02,3,3,6,13,26,13,22,17,25,3,2,0,2,3,0,12,-1,0,-1,-2,-2,normal,normal,normal,slightly satisfied,bad
+MCC03,17,15,18,19,35,20,20,30,66,0,2,0,1,2,1,7,0,-4,-4,-4,2,moderate,severe,mild,neutral,bad
+MCC04,1,1,2,12,19,10,6,13,63,0,1,0,0,1,0,2,8,5,4,7,4,normal,normal,normal,extremely dissatisfied,good
+MCC05,5,5,6,22,24,18,20,21,66,3,1,0,1,2,0,7,-3,0,-4,-6,-8,normal,normal,normal,neutral,bad
+MCC06,9,6,6,22,36,19,20,14,51,0,1,0,2,1,2,9,1,1,3,2,1,normal,mild,normal,neutral,bad
+MCC07,9,8,8,16,30,18,15,15,43,0,2,0,2,1,0,5,-3,1,1,1,0,normal,mild,normal,slightly dissatisfied,good
+MCC08,8,11,10,15,33,20,18,11,57,0,1,0,1,1,1,4,2,-4,-1,2,-1,normal,mild,normal,slightly dissatisfied,good
+MCC09,8,11,13,18,27,18,23,19,40,1,1,0,2,3,0,9,3,1,1,-1,0,normal,mild,normal,slightly satisfied,bad
+MCC10,3,8,6,17,32,14,23,21,47,0,1,0,1,2,0,4,-3,-5,-6,-6,-9,normal,normal,normal,slightly satisfied,good
+MCC11,7,5,6,12,18,12,5,14,42,0,1,0,0,0,0,1,10,6,7,9,7,normal,normal,normal,extremely dissatisfied,good
+MCC12,1,3,8,19,25,9,19,11,30,0,1,0,0,1,0,2,6,-1,0,0,-1,normal,normal,normal,slightly dissatisfied,good
+MCC13,12,8,9,19,28,18,15,21,50,1,0,0,1,1,1,4,-1,0,2,-2,2,mild,moderate,normal,slightly dissatisfied,good
+MSC01,0,0,0,8,12,8,25,31,20,0,1,0,0,0,0,1,-2,-2,-1,-2,-2,normal,normal,normal,slightly satisfied,good
+MSC02,8,7,8,15,34,16,11,12,75,2,2,0,2,3,1,10,-4,-2,-3,-5,-6,normal,mild,normal,dissatisfied,bad
+MSC03,5,7,4,26,27,16,20,24,36,2,2,0,2,3,0,9,6,0,-2,-5,-7,normal,normal,normal,neutral,bad
+MSC04,2,6,5,29,31,16,18,16,30,1,1,0,1,2,0,5,-2,-1,1,-1,-1,normal,normal,normal,slightly dissatisfied,good
+MSC05,3,9,6,15,23,10,15,19,49,0,2,0,2,1,0,5,-2,-5,-4,-3,-10,normal,normal,normal,slightly dissatisfied,good
+MSC06,3,1,2,17,28,14,22,30,40,0,0,0,0,0,0,0,5,2,4,4,4,normal,normal,normal,slightly satisfied,good
+MSC07,10,9,13,21,33,18,18,25,55,0,1,0,2,2,2,9,-2,-5,1,-5,-3,mild,moderate,normal,slightly dissatisfied,bad
+MSC08,4,1,3,11,14,10,27,24,45,1,1,0,1,0,0,3,-4,-4,-4,-4,-3,normal,normal,normal,satisfied,good
+MSC09,11,13,7,19,31,16,23,24,40,0,3,0,2,0,0,5,-4,-6,2,-2,-3,mild,moderate,normal,slightly satisfied,good
+MSC10,7,10,9,24,32,15,22,12,66,1,2,0,2,1,0,6,3,2,3,-1,-2,normal,normal,normal,slightly satisfied,bad
+MSC11,2,1,4,16,27,10,27,32,20,0,0,0,0,0,0,0,4,2,0,0,3,normal,normal,normal,satisfied,good
+MSC12,0,0,0,17,22,10,35,36,80,0,1,0,0,0,0,1,0,0,0,0,0,normal,normal,normal,extremely satisfied,good
+MSC13,3,0,2,12,14,8,25,35,22,1,0,0,0,0,0,3,-1,-2,-3,0,-1,normal,normal,normal,slightly satisfied,good
+MSC14,3,3,7,28,31,13,22,26,71,1,1,0,1,1,0,4,-6,-2,-2,-4,-8,normal,normal,normal,slightly satisfied,good
+MSC15,4,7,6,17,26,12,19,23,54,0,1,0,0,1,0,2,-1,-2,-2,-2,-2,normal,normal,normal,slightly dissatisfied,good
+MSC16,8,1,8,18,26,17,17,10,58,3,1,0,0,1,0,8,3,5,3,5,-1,normal,mild,normal,slightly dissatisfied,bad
+MSC17,1,5,6,18,28,12,33,32,57,0,1,0,0,1,2,4,2,-1,-1,-1,0,normal,normal,normal,extremely satisfied,good
+MSS01,12,10,7,28,35,16,23,23,70,1,1,0,2,0,0,4,-2,0,-6,-7,0,mild,moderate,normal,slightly satisfied,good
+MSS02,2,3,4,12,14,10,25,31,59,2,1,0,0,1,0,7,0,1,-2,-1,2,normal,normal,normal,slightly satisfied,bad
+MSS03,8,7,7,17,25,17,23,19,52,0,0,0,2,1,0,3,3,4,0,-2,0,normal,mild,normal,slightly satisfied,good
+MSS04,2,8,6,20,25,17,30,40,27,0,0,0,1,1,0,2,-1,-4,-2,-3,-6,normal,normal,normal,satisfied,good
+MSS05,7,2,7,26,33,9,27,36,20,0,1,0,0,0,0,1,1,0,0,-1,-1,normal,normal,normal,satisfied,good
+MSS06,12,13,18,21,40,22,24,30,36,0,2,0,1,0,0,3,-2,-6,-5,-7,-7,mild,moderate,normal,slightly satisfied,good
+MSS07,11,6,3,32,37,10,23,27,34,0,1,0,1,2,0,4,1,-2,-3,-7,1,mild,moderate,normal,slightly satisfied,good
+MSS08,7,7,7,15,26,18,11,14,29,0,1,0,2,1,0,4,3,0,-6,0,4,normal,normal,normal,dissatisfied,good
+MSS09,17,12,16,25,40,24,17,18,26,0,1,0,3,0,1,5,-7,-8,-7,-4,-1,moderate,severe,mild,slightly dissatisfied,good
+MSS10,5,11,11,27,32,16,16,28,34,0,1,0,1,3,0,5,-2,2,-4,-4,-6,normal,normal,normal,slightly dissatisfied,good
+MSS11,5,2,4,19,27,15,24,15,39,0,1,0,1,1,0,3,-3,-2,1,-1,-4,normal,normal,normal,slightly satisfied,good
+MSS12,2,5,4,24,36,18,28,23,34,1,0,0,0,1,0,4,-1,-1,-1,-2,-2,normal,normal,normal,satisfied,good
+MSS13,3,7,9,23,27,15,26,27,48,0,1,0,2,2,0,5,-1,-1,-4,-2,-2,normal,normal,normal,satisfied,good
+MSS14,11,8,10,25,30,16,20,31,42,0,1,0,0,1,0,3,-4,-7,-4,-1,0,mild,moderate,normal,neutral,good
+MSS15,12,6,16,17,34,26,28,24,49,0,2,0,2,3,0,7,-1,-5,-2,-4,1,mild,moderate,normal,satisfied,bad
+MSS16,8,13,9,26,38,21,24,27,48,1,2,0,2,1,3,9,0,-2,1,1,-1,normal,mild,normal,slightly satisfied,bad
+MSS17,15,13,14,17,33,19,7,17,75,1,0,0,1,2,0,5,-3,-6,-3,0,5,moderate,severe,mild,extremely dissatisfied,good
+MSS18,11,13,18,22,35,14,18,23,68,2,2,0,3,2,0,10,-1,-5,-6,-5,-2,mild,moderate,normal,slightly dissatisfied,bad
+MSS19,8,10,9,28,29,22,16,21,39,3,3,0,2,2,0,12,-6,-7,-6,-7,-9,normal,mild,normal,slightly dissatisfied,bad
+MSS20,4,10,11,24,27,19,22,16,57,1,1,0,1,1,0,4,-3,-1,-1,0,-2,normal,normal,normal,slightly satisfied,good
+MSS21,8,6,12,22,26,17,21,12,51,0,1,0,3,1,0,5,2,-1,0,-5,-4,normal,mild,normal,slightly satisfied,good
+MSS22,5,8,7,15,20,16,18,21,54,0,1,0,2,1,1,5,1,5,3,0,6,normal,normal,normal,slightly dissatisfied,good
+MSS23,2,2,3,13,20,12,13,24,29,1,1,0,2,1,0,7,-2,-1,-1,1,-4,normal,normal,normal,dissatisfied,bad
+MSS24,6,6,6,20,24,15,17,13,52,2,2,0,3,1,0,9,0,-3,-3,-4,-5,normal,normal,normal,slightly dissatisfied,bad
+SRI01,0,4,1,23,23,9,17,25,31,0,1,0,0,1,0,3,0,0,-7,-5,-1,normal,normal,normal,slightly dissatisfied,good
+SRI02,1,1,2,15,24,14,25,20,71,0,0,0,0,0,0,0,0,-1,3,-2,0,normal,normal,normal,slightly satisfied,good
+SRI03,9,10,4,23,23,18,14,24,46,0,1,0,0,0,0,1,-2,-1,-5,-7,-2,normal,mild,normal,dissatisfied,good
+SRI04,5,5,2,17,22,12,17,23,43,1,1,0,2,1,0,5,0,0,-1,1,-4,normal,normal,normal,slightly dissatisfied,good
+SRI05,3,6,9,20,25,13,28,29,31,1,1,0,1,1,0,4,-1,-3,-2,1,-2,normal,normal,normal,satisfied,good
+SRI06,2,0,1,29,39,14,33,12,26,3,1,0,0,1,0,7,2,2,-2,1,-4,normal,normal,normal,extremely satisfied,bad
+SRI07,14,14,13,24,36,24,10,24,61,1,3,0,2,1,0,9,1,-2,-4,-2,-3,moderate,moderate,normal,dissatisfied,bad
+SRI08,15,5,11,28,42,21,23,23,49,1,2,0,1,1,0,5,4,-5,-7,-4,-1,moderate,severe,mild,slightly satisfied,good
+SRI09,21,16,6,14,33,15,8,12,59,2,2,0,2,2,0,8,2,-4,-2,-4,0,severe,extreme,moderate,extremely dissatisfied,bad
+SRI10,2,5,6,28,40,23,16,29,36,0,2,0,2,1,0,5,1,0,-6,-7,-4,normal,normal,normal,slightly dissatisfied,good
+SRI11,11,21,12,26,27,17,17,40,26,0,0,0,1,0,0,1,-2,0,-6,-4,-4,mild,moderate,normal,slightly dissatisfied,good
+SRI12,2,7,3,17,24,13,17,23,38,0,1,0,0,0,0,1,1,-3,-1,2,-6,normal,normal,normal,slightly dissatisfied,good
+SRI13,2,5,13,32,30,17,35,34,31,0,2,0,1,0,0,3,-4,-4,-2,-3,-4,normal,normal,normal,extremely satisfied,good
+SRI14,9,6,11,21,40,26,25,20,56,0,2,0,1,1,0,4,-1,-7,-5,-3,-4,normal,mild,normal,slightly satisfied,good
+SRI15,6,6,8,23,33,17,25,23,39,0,1,0,1,1,0,3,-3,-3,-2,-2,-3,normal,normal,normal,slightly satisfied,good
+SRI16,7,1,7,28,30,11,21,26,51,1,0,0,1,1,0,3,-1,-2,-4,-2,-3,normal,normal,normal,slightly satisfied,good
+SRI17,8,7,6,23,28,21,18,18,64,0,1,0,2,1,0,4,-1,-3,-4,-3,-5,normal,mild,normal,slightly dissatisfied,good
+SRI18,9,8,7,26,36,16,19,19,50,1,1,0,2,1,0,5,2,-1,-2,-2,-1,normal,mild,normal,slightly dissatisfied,good
+SRI19,15,15,15,27,36,24,19,20,71,0,2,0,2,1,0,5,3,-3,-4,-1,0,moderate,severe,mild,slightly dissatisfied,good
+SRI20,2,8,4,12,20,11,30,30,38,1,0,0,1,1,0,3,-1,-2,-5,-3,-3,normal,normal,normal,satisfied,good
+SRI21,12,7,8,22,29,20,19,13,63,0,1,0,1,0,0,2,-2,0,-5,-6,-6,mild,moderate,normal,slightly dissatisfied,good
+SRI22,7,9,6,23,31,15,16,12,47,0,1,0,2,1,0,4,0,-1,0,-1,2,normal,normal,normal,slightly dissatisfied,good
+SRI23,0,0,0,29,35,17,21,25,25,0,0,0,0,0,0,0,-1,-3,-3,-5,-4,normal,normal,normal,slightly satisfied,good
+SRI24,0,0,0,8,12,8,31,9,38,0,2,0,0,1,0,3,-2,0,0,4,-1,normal,normal,normal,extremely satisfied,good
+SRI25,9,6,5,23,33,17,28,26,20,0,1,0,2,1,0,4,0,-3,-2,-2,0,normal,mild,normal,satisfied,good
+SRI26,21,19,16,20,27,24,9,20,74,3,3,0,2,2,2,12,-3,-6,-4,1,-7,severe,extreme,moderate,extremely dissatisfied,bad
+SRI27,20,9,10,11,30,16,13,22,74,3,2,0,3,2,0,11,1,0,-2,0,2,moderate,extreme,moderate,dissatisfied,bad
+SRI28,11,16,17,27,36,21,18,28,37,2,1,0,0,2,0,6,-3,2,-2,-4,-4,mild,moderate,normal,slightly dissatisfied,bad
+SRM01,15,14,14,29,42,17,24,17,42,0,1,0,1,1,0,3,4,-3,0,-8,-3,moderate,severe,mild,slightly satisfied,good
+SRM02,2,3,4,16,22,13,18,22,40,0,2,0,0,0,0,2,0,0,0,0,0,normal,normal,normal,slightly dissatisfied,good
+SRM03,1,5,2,18,28,11,16,27,34,1,1,0,2,1,0,5,0,-1,-3,-1,0,normal,normal,normal,slightly dissatisfied,good
+SRM04,13,2,3,22,24,18,21,18,52,0,1,0,1,1,0,3,1,-3,-2,0,-1,mild,moderate,normal,slightly satisfied,good
+SRM05,11,11,10,18,25,20,17,15,27,2,1,0,0,2,0,5,3,-1,-4,-1,-5,mild,moderate,normal,slightly dissatisfied,good
+SRM06,0,4,4,11,19,11,5,12,60,0,1,0,0,0,0,1,-2,-2,3,-3,-4,normal,normal,normal,extremely dissatisfied,good
+SRM07,6,8,10,17,24,17,11,20,41,2,2,0,2,1,0,8,-1,0,-3,0,-6,normal,normal,normal,dissatisfied,bad
+SRM08,8,8,13,28,37,19,31,25,26,2,1,0,0,2,0,5,4,-4,0,-4,-7,normal,mild,normal,extremely satisfied,good
+SRM09,12,8,17,27,29,17,16,22,21,3,1,0,1,2,0,7,1,-2,-3,-1,-3,mild,moderate,normal,slightly dissatisfied,bad
+SRM10,5,17,15,13,21,16,20,18,57,0,2,0,2,1,0,5,0,-2,-4,-1,-8,normal,normal,normal,neutral,good
+SRM11,0,3,0,29,34,20,22,12,38,0,1,0,0,0,0,1,-4,-5,-4,-5,1,normal,normal,normal,slightly satisfied,good
+SRM12,6,5,7,16,21,12,28,30,59,0,2,0,3,1,1,7,-5,-5,-7,-5,-11,normal,normal,normal,satisfied,bad
+SRM13,10,10,9,18,27,18,16,8,50,2,1,0,2,1,2,9,1,2,1,0,1,mild,moderate,normal,slightly dissatisfied,bad
+SRM14,2,2,3,13,21,12,19,8,49,0,1,0,0,1,0,2,-2,-1,-2,-1,3,normal,normal,normal,slightly dissatisfied,good
+SRM15,8,9,8,20,24,14,14,29,57,0,2,0,1,1,0,5,-1,-5,-1,-2,-1,normal,mild,normal,dissatisfied,good
+SRM16,7,8,8,16,24,16,24,8,52,0,0,0,2,1,0,3,-1,1,0,1,0,normal,normal,normal,slightly satisfied,good
+SRM17,13,9,11,17,28,21,7,11,52,3,1,0,1,3,0,8,0,-4,-4,-2,-2,mild,moderate,normal,extremely dissatisfied,bad
+SRM18,12,8,10,20,27,19,23,22,53,1,2,0,2,1,1,7,-4,-3,0,4,2,mild,moderate,normal,slightly satisfied,bad
+SRM19,3,6,9,19,30,15,18,23,46,1,0,0,1,2,0,4,-3,-2,-4,-2,-2,normal,normal,normal,slightly dissatisfied,good
+SRM20,4,3,5,10,18,13,16,15,41,0,1,0,1,1,0,3,2,-3,1,-1,0,normal,normal,normal,slightly dissatisfied,good
+SRM21,7,7,7,16,24,16,20,8,51,3,1,0,2,2,0,11,2,-4,-3,1,-3,normal,normal,normal,neutral,bad
+SRM22,1,1,1,8,12,8,16,26,47,0,1,0,0,1,0,4,3,-1,-4,0,2,normal,normal,normal,slightly dissatisfied,good
+SRM23,9,3,4,13,19,14,16,25,77,2,1,0,1,1,0,7,0,-2,-5,1,-3,normal,mild,normal,slightly dissatisfied,bad

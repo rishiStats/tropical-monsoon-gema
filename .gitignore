@@ -11,7 +11,7 @@
 .Rproj.user/
 .Ruserdata/
 .Rapp.history
-*-EX.R
+*-E
 
 __pycache__/
 *.py[cod]
