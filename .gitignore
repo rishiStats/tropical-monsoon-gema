@@ -32,6 +32,11 @@ MANIFEST
 *.manifest
 *.spec
 
+.DS_Store
+.Rproj.user/
+.Rhistory
+.RData
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
