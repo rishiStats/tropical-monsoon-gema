@@ -3,10 +3,12 @@ library(stringr)
 library(hms)
 library(dplyr)
 
+#loading dataset
 file_1 = read_csv("~/Desktop/GEMA/Data/Questionnaires -1  (Responses) - Form responses 1.csv")
 file_2 = read_csv("~/Desktop/GEMA/Data/Questionnaire 2 (Responses) - Form responses 1.csv")
 deidentify = read_csv("~/Desktop/GEMA/Data/deidentify - Sheet1.csv")
 
+#deidentifying dataset
 deidentify$Number = as.numeric(deidentify$Number)
 file_1$`Phone Number  / தொலைபேசி எண்` = as.numeric(file_1$`Phone Number  / தொலைபேசி எண்`)
 file_2$`Phone Number / தொலைபேசி எண்` = as.numeric(file_2$`Phone Number / தொலைபேசி எண்`)
@@ -19,6 +21,7 @@ baseline_raw = deidentify %>%
             "Timestamp.x" , "Email address.x" ,  "Name / பெயர்.x", 
             "Timestamp.y" ,"Email address.y","Name / பெயர்.y"     ))
 
+#removing tamil characters 
 baseline_raw = baseline_raw %>%
   mutate(across(where(is.character), ~str_remove_all(., "[\u0B80-\u0BFF]")))
 
