@@ -96,6 +96,7 @@ daily_data_1 = daily_data_1 %>%
                               "Madras School of Social Work" ~ "MSSW",
                               "Mohamed Sathak College" ~ "MSC",
                               "SrI Ramachandra Institute of Higher Education and Research" ~ "SRIHER",
+                              NA ~ "SRIHER",
                               "SRM Institute of Science and Technology" ~ "SRMIST",
   ))
 
