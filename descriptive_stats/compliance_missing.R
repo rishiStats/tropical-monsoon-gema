@@ -26,7 +26,7 @@ data %>%
   )
 
 data %>%
-  group_by(College, ID) %>%
+  group_by(College.x, ID) %>%
   summarize(total = n(), .groups = "drop_last") %>% 
   summarize(
     n_students = n(),
@@ -106,15 +106,33 @@ data %>%
     percent    = (mean / 30) * 100,
     .groups    = "drop"
   )
-data$time_taken = as.numeric(data$time_taken)
+
 data %>%
+  group_by(ses_class, ID) %>%
+  summarize(total = n(), .groups = "drop_last") %>% 
   summarize(
-    min        = min(time_taken),
-    max        = max(time_taken),
-    mean       = mean(time_taken),
-    sd         = sd(time_taken),
-    median     = median(time_taken),
-    iqr        = IQR(time_taken),
+    n_students = n(),
+    expected   = n() * 30, 
+    n_obs = sum(total),
+    min        = min(total),
+    max        = max(total),
+    mean       = mean(total),
+    sd         = sd(total),
+    median     = median(total),
+    iqr        = IQR(total),
+    percent    = (mean / 30) * 100,
     .groups    = "drop"
   )
 
+decay = data %>%
+  group_by(Day, ID) %>%
+  summarize(total = n(), .groups = "drop_last") %>% 
+  summarize(
+    expected   = 99, 
+    n_obs = sum(total),
+    percent    = (n_obs / expected) * 100,
+    .groups    = "drop"
+  ) 
+
+decay_model <- lm(percent ~ Day, data = decay)
+summary(decay_model)

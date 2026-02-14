@@ -71,7 +71,7 @@ daily_data_1 = daily_data_1 %>%
          #extracting time of time of response
          time_entry = format(end, format = "%H:%M:%S"), 
          #extracting time taken to finish the form 
-         time_taken = format(end - start), 
+         time_taken = as.numeric(difftime(end, start, units = "secs")),
          date = as.Date("2025-11-29") + (Day - 1) ) %>%
   #excluding variables outside 7:20 pm to 4:00 am time period 
   filter(time_entry >= "19:20:00" | time_entry <= "04:00:00" ) %>% 
@@ -99,6 +99,13 @@ daily_data_1 = daily_data_1 %>%
                               NA ~ "SRIHER",
                               "SRM Institute of Science and Technology" ~ "SRMIST",
   ))
+
+days <- c("Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+
+daily_data_1 <- daily_data_1 %>%
+  mutate(
+    day_week =  days[(Day - 1) %% 7 + 1],
+    day_type = if_else(day_week %in% c("Saturday", "Sunday"), "Weekend", "Weekday"))
 
 #saving the final output 
 write_csv(daily_data_1, "~/tropical-monsoon-gema/data_wrangling/panel_data/daily_data_cleaned.csv")
