@@ -126,5 +126,9 @@ demographic <- demographic %>%
     )
   )
 
+demographic= demographic %>%
+  group_by(ID) %>%
+  slice_tail(n = 1) %>% # This picks the last row for every ID
+  ungroup()
 
 write_csv(demographic, "~/tropical-monsoon-gema/data_wrangling/demographic/demographic_cleaned.csv")
