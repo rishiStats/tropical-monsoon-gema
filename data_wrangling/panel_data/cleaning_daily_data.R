@@ -105,7 +105,8 @@ days <- c("Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "F
 daily_data_1 <- daily_data_1 %>%
   mutate(
     day_week =  days[(Day - 1) %% 7 + 1],
-    day_type = if_else(day_week %in% c("Saturday", "Sunday"), "Weekend", "Weekday"))
+    day_type = if_else(day_week %in% c("Saturday", "Sunday"), "Weekend", "Weekday"), 
+    week = (Day - 1) %/% 7 + 1)
 
 #saving the final output 
 write_csv(daily_data_1, "~/tropical-monsoon-gema/data_wrangling/panel_data/daily_data_cleaned.csv")

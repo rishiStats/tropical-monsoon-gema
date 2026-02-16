@@ -124,6 +124,24 @@ data %>%
     .groups    = "drop"
   )
 
+data %>%
+  group_by(week, ID) %>%
+  summarize(total = n(), .groups = "drop_last") %>% 
+  summarize(
+    n_students = n(),
+    days_in_week = if_else(first(week) == 5, 2, 7),
+    expected = n_students * days_in_week,
+    n_obs    = sum(total),
+    min      = min(total),
+    max      = max(total),
+    mean     = mean(total),
+    sd       = sd(total),
+    median   = median(total),
+    iqr      = IQR(total),
+    percent  = (mean / days_in_week) * 100,
+    .groups  = "drop"
+  )
+
 decay = data %>%
   group_by(Day, ID) %>%
   summarize(total = n(), .groups = "drop_last") %>% 
@@ -136,3 +154,42 @@ decay = data %>%
 
 decay_model <- lm(percent ~ Day, data = decay)
 summary(decay_model)
+
+data %>%
+  group_by(day_type, ID) %>%
+  summarize(total = n(), .groups = "drop_last") %>% 
+  summarize(
+    n_students = n(),
+    days_per_type = if_else(first(day_type) == "Weekday", 20, 10), 
+    expected = n_students * days_per_type,
+    n_obs    = sum(total),
+    min      = min(total),
+    max      = max(total),
+    mean     = mean(total),
+    sd       = sd(total),
+    median   = median(total),
+    iqr      = IQR(total),
+    percent  = (n_obs / expected) * 100,
+    .groups  = "drop"
+  )
+
+data %>%
+  group_by(day_week, day_type, ID) %>%
+  summarize(total = n(), .groups = "drop_last") %>% 
+  summarize(
+    n_students = n(),
+    # Weekend days (Sat/Sun) appear 5 times, Weekdays appear 4 times
+    days_per_type = if_else(first(day_type) == "Weekend", 5, 4),
+    
+    expected = n_students * days_per_type,
+    n_obs    = sum(total),
+    min      = min(total),
+    max      = max(total),
+    mean     = mean(total),
+    sd       = sd(total),
+    median   = median(total),
+    iqr      = IQR(total),
+    percent  = (n_obs / expected) * 100,
+    .groups  = "drop"
+  ) %>%
+  arrange(factor(day_week, levels = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")))
