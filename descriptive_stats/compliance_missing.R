@@ -178,9 +178,7 @@ data %>%
   summarize(total = n(), .groups = "drop_last") %>% 
   summarize(
     n_students = n(),
-    # Weekend days (Sat/Sun) appear 5 times, Weekdays appear 4 times
     days_per_type = if_else(first(day_type) == "Weekend", 5, 4),
-    
     expected = n_students * days_per_type,
     n_obs    = sum(total),
     min      = min(total),
